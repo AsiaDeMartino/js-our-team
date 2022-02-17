@@ -61,7 +61,46 @@ for (i = 0; i < team.length; i++){
     aggiungiMembro (team[i])
 }
   
+//bonus
+function aggiungiMembroCustom() {
+    const nome = document.getElementById('name').value;
+    const role = document.getElementById('role').value;
+    const image = document.getElementById('image').value;
+  
+    reset();
+  
+    let membroCustom = {
+      nome : nome,
+      role : role,
+      image : image,
+    }
+  
+    teamContainer.innerHTML += `
+    <div class="team-card">
+        <div class="card-image">
+            <img
+                src="${image}"
+                alt=""
+            />
+        </div>
+        <div class="card-text">
+            <h3>${nome}</h3>
+            <p>${role}</p>
+        </div>
+    </div>
+    `
+    
+    team.push(membroCustom);
+    console.log(team);
+}
 
+bottone.addEventListener("click", aggiungiMembroCustom);
+
+function reset(){
+    document.getElementById("name").value = "";
+    document.getElementById("role").value = "";
+    document.getElementById("image").value = "" ;
+}  
 
   
   
