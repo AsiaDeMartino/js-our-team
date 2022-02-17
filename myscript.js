@@ -56,7 +56,14 @@ function aggiungiMembro() {
     `
 }
 
+//ripeto la funzione per ogni oggetto
+for (i = 0; i < team.length; i++){
+    aggiungiMembro (team[i])
+}
+  
 
+
+  
   
 
 
